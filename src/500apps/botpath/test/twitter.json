@@ -1,0 +1,199 @@
+[
+  {
+    "id": "PBXNODE1",
+    "type": "start",
+    "next": {
+      "start": "PBX2"
+    }
+  },
+  {
+    "id": "PBX2",
+    "type": "rpaOpenApp",
+    "next": {
+      "success": "PBX3"
+    },
+    "url": "https://www.linkedin.com/"
+  },
+  {
+    "id": "PBX3",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX4"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaMouseClick",
+    "expression": "/html/body/nav/a[3]",
+    "waitTime": 3000
+  },
+  {
+    "id": "PBX4",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX5"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaMouseClick",
+    "expression": "//*[@id=\"username\"]",
+    "waitTime": 3000
+  },
+  {
+    "id": "PBX5",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX6"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaTypeString",
+    "expression": "//*[@id=\"username\"]",
+    "input": "test@gmail.com",
+    "waitTime": 6000
+  },
+  {
+    "id": "PBX6",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX7"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaMouseClick",
+    "expression": "//*[@id=\"password\"]",
+    "waitTime": 3000
+  },
+  {
+    "id": "PBX7",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX8"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaTypeString",
+    "expression": "//*[@id=\"password\"]",
+    "input": "13456789",
+    "waitTime": 6000
+  },
+  {
+    "id": "PBX8",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX9"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaMouseClick",
+    "expression": "/html/body/div/main/div[2]/form/div[4]/button",
+    "waitTime": 3000
+  },
+  {
+    "id": "PBX9",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX10"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaMouseClick",
+    "expression": "/html/body/header/div/form/div/div/div/div/div[1]/div[1]/input",
+    "waitTime": 3000
+  },
+  {
+    "id": "PBX10",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX11"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaTypeString",
+    "expression": "/html/body/header/div/form/div/div/div/div/div[1]/div[1]/input",
+    "input": "agilecrm",
+    "waitTime": 6000
+  },
+  {
+    "id": "PBX11",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX12"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaMouseClick",
+    "expression": "/html/body/header/div/form/div/div/div/div/div[2]/button/li-icon/svg",
+    "waitTime": 3000
+  },
+  {
+    "id": "PBX12",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX13"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaMouseClick",
+    "expression": "/html/body/header/div/form/div/div/div/div/div[1]/div[1]/input",
+    "waitTime": 3000
+  },
+  {
+    "id": "PBX13",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX14"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaMouseClick",
+    "expression": "/html/body/header/div/form/div/div/div/div/div[1]/div[3]/div/div[2]/div/span/span[1]",
+    "waitTime": 3000
+  },
+  {
+    "id": "PBX14",
+    "type": "RPADomActions",
+    "next": {
+      "success": "PBX15"
+    },
+    "nodename": "DOM Event",
+    "getElementBy": "xpath",
+    "typeOfAction": "rpaMouseClick",
+    "expression": "/html/body/div[8]/div[3]/div/div[3]/div[1]/section/div/div/div[2]/div[2]/div/div[2]/a/span",
+    "waitTime": 3000
+  },
+  {
+    "id": "PBX15",
+    "type": "rpaDataExtraction",
+    "next": {
+      "success": "PBX16"
+    },
+    "nodename": "Data Extraction",
+    "uifields": {
+      "NextButtonText": "Next",
+      "fields": [
+        {
+          "name": "name",
+          "selector": "a.search-result__result-link.ember-view h3.actor-name-with-distance.search-result__title.single-line-truncate.ember-view span.name-and-icon span.name-and-distance span.name.actor-name"
+        },
+        {
+          "name": "dig",
+          "selector": "p.subline-level-1.t-14.t-black.t-normal.search-result__truncate"
+        }
+      ],
+      "isTable": false,
+      "nextSelector": "div.search-results-container div.ember-view div.display-flex div.search-results-page.core-rail div.search-results.ember-view div.blended-srp-results-js.pt0.pb4.ph0.container-with-shadow div.ember-view div.pv5.artdeco-pagination.ember-view button.artdeco-pagination__button.artdeco-pagination__button--next.artdeco-button.artdeco-button--muted.artdeco-button--icon-right.artdeco-button--1.artdeco-button--tertiary.ember-view span.artdeco-button__text",
+      "rootSelector": "ul.search-results__list.list-style-none li.search-result.search-result__occluded-item.ember-view div.search-entity.search-result.search-result--person.search-result--occlusion-enabled.ember-view div.search-result__wrapper div.search-result__info.pt3.pb4.ph0"
+    }
+  },
+  {
+    "id": "PBX16",
+    "type": "rpaCsvWrite",
+    "next": {
+      "success": "hangup"
+    },
+    "nodename": "Add CSV",
+    "operationType": "create",
+    "fileLocation": "/testlink.csv",
+    "Input_Data": "dataExtraction"
+  }
+]
